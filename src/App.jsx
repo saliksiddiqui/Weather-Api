@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import FetchWeather from "./FetchWeather";
 import ShowData from "./ShowData";
+import skyBg from './assets/skyBg.jpg'
 
 export default function App() {
   const [data, setData]=useState(null);
@@ -31,9 +32,9 @@ export default function App() {
       setError(null)
       console.log('data',data);
     } catch(error) {
-      setData(null)
-      setError('error', err.message);
-    }
+  setData(null);
+  setError(error.message);
+}
   };
   // useEffect(() => {
   //   // console.log('updatedData',data)
@@ -41,6 +42,7 @@ export default function App() {
   return (
     <>
       <FetchWeather onFetchData={fetchData}/>
+      {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
       <ShowData weatherData={data} />
     </>
   );

@@ -11,7 +11,7 @@ const ShowData = ( {weatherData} ) => {
     // }
   return (
     <>
-    <div className="container">
+    <div className="head-container">
     {weatherData && (
         <div className='container'>
           <h2 className='cityName'>{weatherData.name}</h2>
